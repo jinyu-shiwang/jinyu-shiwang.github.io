@@ -16,13 +16,13 @@
 <style>
 :root {
   --bg: #ffffff;
-  --ink: #1a1a1a;
-  --mid: #3a3a3a;
-  --muted: #666;
-  --light: #999;
-  --link: #265894;
-  --link-hover: #1a3f6e;
-  --border: #e4e4e4;
+  --ink: #000000;
+  --mid: #111111;
+  --muted: #444444;
+  --light: #888888;
+  --link: #1a56a0;
+  --link-hover: #0e3a72;
+  --border: #d0d0d0;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -46,8 +46,8 @@ body {
   color: var(--ink);
   font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
-  font-size: 15.5px;
-  line-height: 1.72;
+  font-size: 18.5px;
+  line-height: 1.82;
   max-width: 860px;
   margin: 0 auto;
   padding: 46px 36px 100px;
@@ -89,29 +89,29 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 }
 .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .bio-col { flex: 1; padding-top: 4px; }
-.name { font-size: 1.85rem; font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 2px; }
+.name { font-size: 2.1rem; font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 2px; }
 .name-zh { font-size: 0.95rem; color: var(--muted); font-weight: 300; margin-bottom: 10px; }
-.affil { font-size: 0.93rem; color: var(--mid); line-height: 1.6; margin-bottom: 14px; }
+.affil { font-size: 1rem; color: var(--mid); line-height: 1.7; margin-bottom: 14px; }
 .affil a { color: var(--mid); }
 .affil a:hover { color: var(--link); text-decoration: underline; }
-.contact-links { font-size: 0.87rem; display: flex; flex-wrap: wrap; gap: 4px 0; }
+.contact-links { font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 4px 0; }
 .contact-links a { margin-right: 14px; color: var(--link); }
 
 /* ── SECTIONS ── */
 .section { margin-bottom: 38px; }
 h2 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--ink);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: 0;
   margin-bottom: 14px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
 }
 
 /* ── ABOUT ── */
-.about-text { font-size: 0.93rem; color: var(--mid); margin-bottom: 10px; }
+.about-text { font-size: 1rem; color: var(--mid); margin-bottom: 12px; }
 
 /* Research interest tags */
 .interest-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
@@ -133,22 +133,22 @@ h2 {
   display: grid;
   grid-template-columns: 118px 1fr;
   gap: 0 16px;
-  margin-bottom: 13px;
-  font-size: 0.9rem;
+  margin-bottom: 16px;
+  font-size: 1rem;
 }
-.tl-year { color: var(--muted); font-size: 0.82rem; padding-top: 2px; line-height: 1.5; }
-.tl-title { color: var(--ink); font-weight: 400; line-height: 1.45; }
-.tl-sub { color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.tl-year { color: var(--muted); font-size: 0.9rem; padding-top: 2px; line-height: 1.5; }
+.tl-title { color: var(--ink); font-weight: 700; line-height: 1.45; }
+.tl-sub { color: var(--muted); font-size: 0.93rem; line-height: 1.5; }
 
 /* ── PUBLICATIONS ── */
 .pub-group {
-  font-size: 0.8rem; font-weight: 700; color: var(--muted);
+  font-size: 0.88rem; font-weight: 700; color: var(--muted);
   text-transform: uppercase; letter-spacing: 0.07em;
-  margin: 18px 0 10px;
+  margin: 20px 0 12px;
 }
 .pub-group:first-child { margin-top: 0; }
-.pub { display: flex; gap: 10px; margin-bottom: 13px; font-size: 0.9rem; line-height: 1.55; }
-.pub-num { flex-shrink: 0; width: 24px; text-align: right; color: var(--light); font-size: 0.78rem; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.pub { display: flex; gap: 10px; margin-bottom: 16px; font-size: 1rem; line-height: 1.65; }
+.pub-num { flex-shrink: 0; width: 28px; text-align: right; color: var(--light); font-size: 0.88rem; padding-top: 2px; font-variant-numeric: tabular-nums; }
 .pub-text { flex: 1; color: var(--mid); }
 .pub-text b { color: var(--ink); font-weight: 400; }
 .pub-text em { font-style: italic; color: var(--ink) !important; font-weight: 400 !important; }
@@ -169,8 +169,8 @@ h2 {
 }
 
 /* ── TALKS ── */
-.talk { display: grid; grid-template-columns: 66px 1fr; gap: 0 14px; margin-bottom: 8px; font-size: 0.88rem; line-height: 1.5; }
-.talk-date { color: var(--muted); font-size: 0.8rem; padding-top: 2px; }
+.talk { display: grid; grid-template-columns: 66px 1fr; gap: 0 14px; margin-bottom: 10px; font-size: 1rem; line-height: 1.6; }
+.talk-date { color: var(--muted); font-size: 0.9rem; padding-top: 2px; }
 .talk-body { color: var(--mid); }
 .talk-type {
   font-size: 0.73rem; background: #fdf4e3; color: #8a6020;
@@ -182,13 +182,13 @@ h2 {
 
 /* ── SERVICE / SKILLS single column ── */
 .sub-label {
-  font-size: 0.8rem; font-weight: 700; color: var(--muted);
+  font-size: 0.88rem; font-weight: 700; color: var(--muted);
   text-transform: uppercase; letter-spacing: 0.06em;
-  margin-bottom: 6px; margin-top: 18px;
+  margin-bottom: 8px; margin-top: 20px;
 }
 .sub-label:first-child { margin-top: 0; }
 ul.plain { list-style: none; padding: 0; }
-ul.plain li { font-size: 0.88rem; color: var(--mid); line-height: 1.9; }
+ul.plain li { font-size: 1rem; color: var(--mid); line-height: 2; }
 ul.plain li::before { content: "· "; color: var(--light); }
 dl.skills { font-size: 0.88rem; }
 dl.skills dt { font-weight: 700; color: var(--mid); margin-top: 8px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -258,9 +258,7 @@ footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--border
 <div class="section" id="about">
   <h2>About</h2>
   <p class="about-text">
-    I am a Postdoctoral Research Associate at the
-    <a href="https://acee.princeton.edu/" target="_blank">Andlinger Center for Energy and the Environment</a>
-    at <a href="https://www.princeton.edu/" target="_blank">Princeton University</a>. My research bridges three scientific communities — environmental engineering, integrated energy system modeling, and decision-making under deep uncertainty (DMDU) — to advance <em>health-centered energy transitions under uncertainty</em>.
+    I am a Postdoctoral Research Associate at the <a href="https://acee.princeton.edu/" target="_blank">Andlinger Center for Energy and the Environment</a> at <a href="https://www.princeton.edu/" target="_blank">Princeton University</a>. My research bridges three scientific communities — environmental engineering, integrated energy system modeling, and decision-making under deep uncertainty (DMDU) — to advance <em>health-centered energy transitions under uncertainty</em>.
   </p>
   <p class="about-text">
     My work pursues two interconnected themes. First, I connect energy transitions with public health by developing integrated energy–air quality–health modeling frameworks to understand how decarbonization pathways shape air pollution and health outcomes. Second, I explore scenario ensembles to identify robust energy and environmental strategies across deep uncertain futures.
@@ -325,35 +323,35 @@ footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--border
 
   <div class="pub">
     <span class="pub-num">[8]</span>
-    <div class="pub-text">N Scovronick#,*, <b>J Shiwang#</b>, M Ferranna#, F Wagner#, F Errickson#, D Tong, X Yan, N Dubash, Y Liu, B Krishna, M Fleurbaey, P Wang, S Zhang, G Kiesewetter, S Smith, F Dennig, W Peng#,*, M Budolfson#,*. Global climate justice and the future of air quality co-benefits in low-income and middle-income countries: an energy, climate, and health modelling study. <em>The Lancet Global Health</em>, 14, e512–e523, 2026.</div>
+    <div class="pub-text">N Scovronick#,*, <b>J Shiwang#</b>, M Ferranna#, F Wagner#, F Errickson#, D Tong, X Yan, N Dubash, Y Liu, B Krishna, M Fleurbaey, P Wang, S Zhang, G Kiesewetter, S Smith, F Dennig, W Peng#,*, M Budolfson#,*. Global climate justice and the future of air quality co-benefits in low-income and middle-income countries: an energy, climate, and health modelling study. <em>The Lancet Global Health</em>, 14, e512–e523, 2026. <a href="https://doi.org/10.1016/S2214-109X(26)00006-9" target="_blank" style="color:var(--link);font-size:0.88rem;">[Paper Link]</a></div>
   </div>
   <div class="pub">
     <span class="pub-num">[7]</span>
-    <div class="pub-text"><b>J Shiwang</b>, W Peng*, J Bistline, J Farbes, X Huang, G Iyer, JD Jenkins, E Knipping, N Mailloux, E Mayfield, A Venkatesh, A Zhao, Q Zhu. Multi-Model Assessment of the Air Quality and Health Impacts of U.S. Energy Decarbonization. <em>Environmental Science &amp; Technology</em>, 600(38): 27063–27078, 2026.</div>
+    <div class="pub-text"><b>J Shiwang</b>, W Peng*, J Bistline, J Farbes, X Huang, G Iyer, JD Jenkins, E Knipping, N Mailloux, E Mayfield, A Venkatesh, A Zhao, Q Zhu. Multi-Model Assessment of the Air Quality and Health Impacts of U.S. Energy Decarbonization. <em>Environmental Science &amp; Technology</em>, 600(38): 27063–27078, 2026. <a href="https://doi.org/10.1021/acs.est.6c02914" target="_blank" style="color:var(--link);font-size:0.88rem;">[Paper Link]</a></div>
   </div>
   <div class="pub">
     <span class="pub-num">[6]</span>
-    <div class="pub-text">X Huang, <b>J Shiwang</b>, K Keller, W Peng*. Fine-scale population, emissions, and atmospheric dynamics driving health disparity outcomes from energy transition. <em>Earth's Future</em>, 14(9), 2026.</div>
+    <div class="pub-text">X Huang, <b>J Shiwang</b>, K Keller, W Peng*. Fine-scale population, emissions, and atmospheric dynamics driving health disparity outcomes from energy transition. <em>Earth's Future</em>, 14(9), 2026. <a href="https://doi.org/10.1029/2025EF007767" target="_blank" style="color:var(--link);font-size:0.88rem;">[Paper Link]</a></div>
   </div>
   <div class="pub">
     <span class="pub-num">[5]</span>
-    <div class="pub-text"><b>J Shiwang</b>, W Peng*, X Huang, G Iyer, V Srikrishnan, K Keller. Technology indicators enable early detection of decarbonization failures. <em>Applied Energy</em>, 424, 128448, 2026.</div>
+    <div class="pub-text"><b>J Shiwang</b>, W Peng*, X Huang, G Iyer, V Srikrishnan, K Keller. Technology indicators enable early detection of decarbonization failures. <em>Applied Energy</em>, 424, 128448, 2026. <a href="https://doi.org/10.1016/j.apenergy.2026.128448" target="_blank" style="color:var(--link);font-size:0.88rem;">[Paper Link]</a></div>
   </div>
   <div class="pub">
     <span class="pub-num">[4]</span>
-    <div class="pub-text">A Sharma#, <b>J Shiwang#</b>, A Lee, W Peng#,*. Equity implications of electric vehicles: A systematic review on the spatial distribution of emissions, air pollution and health impacts. <em>Environmental Research Letters</em>, 18(5), p.053001, 2023.</div>
+    <div class="pub-text">A Sharma#, <b>J Shiwang#</b>, A Lee, W Peng#,*. Equity implications of electric vehicles: A systematic review on the spatial distribution of emissions, air pollution and health impacts. <em>Environmental Research Letters</em>, 18(5), p.053001, 2023. <a href="https://iopscience.iop.org/article/10.1088/1748-9326/acc87c/meta" target="_blank" style="color:var(--link);font-size:0.88rem;">[Paper Link]</a></div>
   </div>
   <div class="pub">
     <span class="pub-num">[3]</span>
-    <div class="pub-text">W Peng*, C Campos, <b>J Shiwang</b>, H Luo, G Iyer, M Budolfson, N Scovronick. Effects of the low-carbon energy transition on air pollution and health disparities. <em>Nature Reviews Clean Technology</em>, pp.1–14, 2025.</div>
+    <div class="pub-text">W Peng*, C Campos, <b>J Shiwang</b>, H Luo, G Iyer, M Budolfson, N Scovronick. Effects of the low-carbon energy transition on air pollution and health disparities. <em>Nature Reviews Clean Technology</em>, pp.1–14, 2025. <a href="https://www.nature.com/articles/s44359-025-00070-0" target="_blank" style="color:var(--link);font-size:0.88rem;">[Paper Link]</a></div>
   </div>
   <div class="pub">
     <span class="pub-num">[2]</span>
-    <div class="pub-text"><b>J Shiwang</b>, J Bi, R Liu, M Liu*, Z Ma*. Decrease in the chronic health effects from PM2.5 during the 13th Five-Year Plan in China: Impacts of air pollution control policies. <em>Journal of Cleaner Production</em>, 317, p.128433, 2021.</div>
+    <div class="pub-text"><b>J Shiwang</b>, J Bi, R Liu, M Liu*, Z Ma*. Decrease in the chronic health effects from PM2.5 during the 13th Five-Year Plan in China: Impacts of air pollution control policies. <em>Journal of Cleaner Production</em>, 317, p.128433, 2021. <a href="https://doi.org/10.1016/j.jclepro.2021.128433" target="_blank" style="color:var(--link);font-size:0.88rem;">[Paper Link]</a></div>
   </div>
   <div class="pub">
     <span class="pub-num">[1]</span>
-    <div class="pub-text"><b>J Shiwang#</b>, Y Wu#, X Sun, X Gu, R Ji, M Li*. Environmental Governance of Western Europe and Its Enlightenment to China: In Context to Rhine Basin and the Yangtze River Basin. <em>Bulletin of Environmental Contamination and Toxicology</em>, 106(5), pp.819–824, 2021.</div>
+    <div class="pub-text"><b>J Shiwang#</b>, Y Wu#, X Sun, X Gu, R Ji, M Li*. Environmental Governance of Western Europe and Its Enlightenment to China: In Context to Rhine Basin and the Yangtze River Basin. <em>Bulletin of Environmental Contamination and Toxicology</em>, 106(5), pp.819–824, 2021. <a href="https://link.springer.com/article/10.1007/s00128-021-03198-4" target="_blank" style="color:var(--link);font-size:0.88rem;">[Paper Link]</a></div>
   </div>
 
   <div class="pub-group" style="margin-top:20px;">Work in Progress</div>
@@ -451,7 +449,7 @@ footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--border
 
 
 <footer>
-  Last updated November 2026 &nbsp;·&nbsp;
+  Last updated January 2026 &nbsp;·&nbsp;
   141 Andlinger Center, Princeton University &nbsp;·&nbsp;
   <a href="mailto:ws6354@princeton.edu">ws6354@princeton.edu</a>
 </footer>
