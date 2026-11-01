@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jinyu Shiwang</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --ink: #1a1a1a;
+  --mid: #3a3a3a;
+  --muted: #666;
+  --light: #999;
+  --link: #265894;
+  --link-hover: #1a3f6e;
+  --border: #e4e4e4;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1c1e;
+    --ink: #ddd;
+    --mid: #bbb;
+    --muted: #888;
+    --light: #555;
+    --link: #7aaee0;
+    --link-hover: #9fc4ed;
+    --border: #2e2e30;
+  }
+}
+*, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+html { scroll-padding-top: 16px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15.5px;
+  line-height: 1.72;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 46px 36px 100px;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* ── TOP NAV ── */
+.top-nav {
+  text-align: right;
+  margin-bottom: 42px;
+  font-size: 0.88rem;
+  font-weight: 400;
+}
+.top-nav a { color: var(--muted); margin-left: 18px; }
+.top-nav a:hover { color: var(--link); text-decoration: none; }
+
+/* ── HEADER ── */
+.header {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+.photo-col { flex-shrink: 0; }
+.photo {
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  background: #dce6f0;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: #6a8fb5;
+  font-weight: 300;
+  overflow: hidden;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.bio-col { flex: 1; padding-top: 4px; }
+.name { font-size: 1.85rem; font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 2px; }
+.name-zh { font-size: 0.95rem; color: var(--muted); font-weight: 300; margin-bottom: 10px; }
+.affil { font-size: 0.93rem; color: var(--mid); line-height: 1.6; margin-bottom: 14px; }
+.affil a { color: var(--mid); }
+.affil a:hover { color: var(--link); text-decoration: underline; }
+.contact-links { font-size: 0.87rem; display: flex; flex-wrap: wrap; gap: 4px 0; }
+.contact-links a { margin-right: 14px; color: var(--link); }
+
+/* ── SECTIONS ── */
+.section { margin-bottom: 38px; }
+h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── ABOUT ── */
+.about-text { font-size: 0.93rem; color: var(--mid); margin-bottom: 10px; }
+
+/* Research interest tags */
+.interest-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.interest-tag {
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--mid);
+  background: var(--bg);
+  font-weight: 400;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .interest-tag { background: #252527; }
+}
+
+/* ── TIMELINE ── */
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  gap: 0 16px;
+  margin-bottom: 13px;
+  font-size: 0.9rem;
+}
+.tl-year { color: var(--muted); font-size: 0.82rem; padding-top: 2px; line-height: 1.5; }
+.tl-title { color: var(--ink); font-weight: 400; line-height: 1.45; }
+.tl-sub { color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+
+/* ── PUBLICATIONS ── */
+.pub-group {
+  font-size: 0.8rem; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.07em;
+  margin: 18px 0 10px;
+}
+.pub-group:first-child { margin-top: 0; }
+.pub { display: flex; gap: 10px; margin-bottom: 13px; font-size: 0.9rem; line-height: 1.55; }
+.pub-num { flex-shrink: 0; width: 24px; text-align: right; color: var(--light); font-size: 0.78rem; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.pub-text { flex: 1; color: var(--mid); }
+.pub-text b { color: var(--ink); font-weight: 400; }
+.pub-text em { font-style: italic; color: var(--ink) !important; font-weight: 400 !important; }
+.tag {
+  display: inline-block; font-size: 0.67rem; padding: 1px 5px;
+  border-radius: 2px; font-weight: 400; vertical-align: middle;
+  margin-left: 4px; font-style: normal;
+}
+.tag-pub    { background: #e8f4eb; color: #2a7040; }
+.tag-wip    { background: #fdf4e3; color: #8a6020; }
+.tag-nature { background: #edf2fb; color: #2a4f8a; }
+.tag-lancet { background: #fdeaea; color: #a03030; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tag-pub    { background: #142a1a; color: #5faa72; }
+  :root:not([data-theme="light"]) .tag-wip    { background: #1e1908; color: #c9a040; }
+  :root:not([data-theme="light"]) .tag-nature { background: #101828; color: #7aaee0; }
+  :root:not([data-theme="light"]) .tag-lancet { background: #200e0e; color: #d07070; }
+}
+
+/* ── TALKS ── */
+.talk { display: grid; grid-template-columns: 66px 1fr; gap: 0 14px; margin-bottom: 8px; font-size: 0.88rem; line-height: 1.5; }
+.talk-date { color: var(--muted); font-size: 0.8rem; padding-top: 2px; }
+.talk-body { color: var(--mid); }
+.talk-type {
+  font-size: 0.73rem; background: #fdf4e3; color: #8a6020;
+  border-radius: 2px; padding: 1px 5px; margin-left: 5px; vertical-align: middle;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .talk-type { background: #1e1908; color: #c9a040; }
+}
+
+/* ── SERVICE / SKILLS single column ── */
+.sub-label {
+  font-size: 0.8rem; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 6px; margin-top: 18px;
+}
+.sub-label:first-child { margin-top: 0; }
+ul.plain { list-style: none; padding: 0; }
+ul.plain li { font-size: 0.88rem; color: var(--mid); line-height: 1.9; }
+ul.plain li::before { content: "· "; color: var(--light); }
+dl.skills { font-size: 0.88rem; }
+dl.skills dt { font-weight: 700; color: var(--mid); margin-top: 8px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+dl.skills dd { color: var(--muted); margin-left: 0; }
+.doi-link {
+  font-size: 0.75rem;
+  color: var(--link);
+  margin-left: 6px;
+  font-style: normal;
+  white-space: nowrap;
+}
+.doi-link:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* ── FOOTER ── */
+footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--light); }
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  body { padding: 28px 18px 70px; }
+  .header { flex-direction: column; gap: 20px; align-items: center; text-align: center; }
+  .photo { width: 120px; height: 120px; }
+  .contact-links { justify-content: center; }
+  .timeline-entry { grid-template-columns: 90px 1fr; }
+  .talk { grid-template-columns: 56px 1fr; }
+  .top-nav { text-align: center; }
+  .interest-tags { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#publications">Publications</a>
+  <a href="#talks">Talks</a>
+  <a href="#teaching">Teaching</a>
+  <a href="#service">Service</a>
+
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="photo-col">
+    <img src="data:image/jpeg;base64,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" alt="Jinyu Shiwang" class="photo">
+  </div>
+  <div class="bio-col">
+    <div class="name">Jinyu Shiwang</div>
+    <div class="name-zh">施王金羽</div>
+    <div class="affil">
+      Postdoctoral Research Associate<br>
+      <a href="https://acee.princeton.edu/">Andlinger Center for Energy and the Environment</a><br>
+      Princeton University
+    </div>
+    <div class="contact-links">
+      <a href="mailto:shiwangjinyu@gmail.com">shiwangjinyu@gmail.com</a>
+      <a href="https://scholar.google.com/citations?user=ZYsbZ7cAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/jinyu-shiwang-064055196/" target="_blank">LinkedIn</a>
+      <a href="#">CV</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <h2>About</h2>
+  <p class="about-text">
+    I am a Postdoctoral Research Associate at the
+    <a href="https://acee.princeton.edu/" target="_blank">Andlinger Center for Energy and the Environment</a>
+    at <a href="https://www.princeton.edu/" target="_blank">Princeton University</a>. My research bridges three scientific communities — environmental engineering, integrated energy systems, and decision-making under deep uncertainty (DMDU) — to advance <em>health-centered energy transitions under uncertainty</em>.
+  </p>
+  <p class="about-text">
+    My work pursues two interconnected themes. First, I connect energy transitions with environmental health by developing integrated energy–air quality–health modeling frameworks to understand how decarbonization pathways shape air pollution and health outcomes, with a focus on equity across populations. Second, I generate robust insights across uncertain futures by exploring scenario ensembles and uncertainty characterization to identify resilient energy and environmental strategies under deep uncertainty. Ultimately, I aim to understand not only how energy transitions affect health, but how health considerations can help shape robust transitions under an uncertain and changing climate.
+  </p>
+  <p class="about-text">
+    I received my Ph.D. in Environmental Engineering from <a href="https://www.psu.edu/" target="_blank">The Pennsylvania State University</a> (2026), with time as a trailing Ph.D. student at <a href="https://spia.princeton.edu/" target="_blank">Princeton's School of Public and International Affairs</a> (2024–2026). I hold an M.Sc. from <a href="https://www.imperial.ac.uk/" target="_blank">Imperial College London</a> (2022) and a B.Sc. from <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University</a> (2021).
+  </p>
+
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section" id="experience">
+  <h2>Experience</h2>
+  <div class="timeline-entry">
+    <div class="tl-year">2026 – present</div>
+    <div>
+      <div class="tl-title">Postdoctoral Research Associate</div>
+      <div class="tl-sub">Andlinger Center for Energy and the Environment, Princeton University</div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section" id="education">
+  <h2>Education</h2>
+  <div class="timeline-entry">
+    <div class="tl-year">2022 – 2026</div>
+    <div>
+      <div class="tl-title">Ph.D. in Environmental Engineering</div>
+      <div class="tl-sub">College of Engineering, The Pennsylvania State University, State College, PA</div>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="tl-year">2024 – 2026</div>
+    <div>
+      <div class="tl-title">Trailing Ph.D. Student</div>
+      <div class="tl-sub">School of Public and International Affairs, Princeton University, NJ</div>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="tl-year">2021 – 2022</div>
+    <div>
+      <div class="tl-title">M.Sc. in Environmental Technology</div>
+      <div class="tl-sub">Center for Environmental Policy, Imperial College London, UK</div>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="tl-year">2017 – 2021</div>
+    <div>
+      <div class="tl-title">B.Sc. in Environmental Science</div>
+      <div class="tl-sub">School of Environment, Nanjing University, China</div>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="section" id="publications">
+  <h2>Publications</h2>
+  <p style="font-size:0.82rem;color:var(--muted);margin-bottom:6px;"># equal contribution &nbsp;·&nbsp; * corresponding author</p>
+
+  <div class="pub-group">Peer-reviewed</div>
+
+  <div class="pub">
+    <span class="pub-num">[8]</span>
+    <div class="pub-text">N Scovronick#,*, <b>J Shiwang#</b>, M Ferranna#, F Wagner#, F Errickson#, D Tong, X Yan, N Dubash, Y Liu, B Krishna, M Fleurbaey, P Wang, S Zhang, G Kiesewetter, S Smith, F Dennig, W Peng#,*, M Budolfson#,*. Global climate justice and the future of air quality co-benefits in low-income and middle-income countries: an energy, climate, and health modelling study. <em>The Lancet Global Health</em>, 14, e512–e523, 2026.</div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[7]</span>
+    <div class="pub-text"><b>J Shiwang</b>, W Peng*, J Bistline, J Farbes, X Huang, G Iyer, JD Jenkins, E Knipping, N Mailloux, E Mayfield, A Venkatesh, A Zhao, Q Zhu. Multi-Model Assessment of the Air Quality and Health Impacts of U.S. Energy Decarbonization. <em>Environmental Science &amp; Technology</em>, 600(38): 27063–27078, 2026.</div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[6]</span>
+    <div class="pub-text">X Huang, <b>J Shiwang</b>, K Keller, W Peng*. Fine-scale population, emissions, and atmospheric dynamics driving health disparity outcomes from energy transition. <em>Earth's Future</em>, 14(9), 2026.</div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[5]</span>
+    <div class="pub-text"><b>J Shiwang</b>, W Peng*, X Huang, G Iyer, V Srikrishnan, K Keller. Technology indicators enable early detection of decarbonization failures. <em>Applied Energy</em>, 424, 128448, 2026.</div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[4]</span>
+    <div class="pub-text">A Sharma#, <b>J Shiwang#</b>, A Lee, W Peng#,*. Equity implications of electric vehicles: A systematic review on the spatial distribution of emissions, air pollution and health impacts. <em>Environmental Research Letters</em>, 18(5), p.053001, 2023.</div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[3]</span>
+    <div class="pub-text">W Peng*, C Campos, <b>J Shiwang</b>, H Luo, G Iyer, M Budolfson, N Scovronick. Effects of the low-carbon energy transition on air pollution and health disparities. <em>Nature Reviews Clean Technology</em>, pp.1–14, 2025.</div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[2]</span>
+    <div class="pub-text"><b>J Shiwang</b>, J Bi, R Liu, M Liu*, Z Ma*. Decrease in the chronic health effects from PM2.5 during the 13th Five-Year Plan in China: Impacts of air pollution control policies. <em>Journal of Cleaner Production</em>, 317, p.128433, 2021.</div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[1]</span>
+    <div class="pub-text"><b>J Shiwang#</b>, Y Wu#, X Sun, X Gu, R Ji, M Li*. Environmental Governance of Western Europe and Its Enlightenment to China: In Context to Rhine Basin and the Yangtze River Basin. <em>Bulletin of Environmental Contamination and Toxicology</em>, 106(5), pp.819–824, 2021.</div>
+  </div>
+
+  <div class="pub-group" style="margin-top:20px;">Work in Progress</div>
+
+  <div class="pub">
+    <span class="pub-num">[4]</span>
+    <div class="pub-text">W Peng#,*, A Deshpande#, X Huang#, <b>J Shiwang#</b>, M Budolfson*, F Wagner, F Errickson, G Iyer, DH Loughlin, C Nolte, S Smith, P Wang, N Scovronick*. Complex factors influencing US air pollution equity under a Net-Zero transition. <em>Nature Sustainability</em>. <span class="tag tag-wip">Revision resubmitted</span></div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[3]</span>
+    <div class="pub-text"><b>J Shiwang</b>, W Peng*, V Srikrishnan, K Keller. Safeguarding local air quality and health through localized energy and environmental strategies. <span class="tag tag-wip">Working paper</span></div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[2]</span>
+    <div class="pub-text">J Wessel*, K Guo, K Keller, <b>J Shiwang</b>, V Srikrishnan, W Peng*. Substituting solar geoengineering for emissions mitigation increases human mortality by increasing air pollution. <span class="tag tag-wip">Working paper</span></div>
+  </div>
+  <div class="pub">
+    <span class="pub-num">[1]</span>
+    <div class="pub-text">K Guo, W Peng*, <b>J Shiwang</b>, M Budolfson, N Scovronick. Subnational socioeconomic and urban–rural disparities in air pollution and health benefits under global climate mitigation. <span class="tag tag-wip">Working paper</span></div>
+  </div>
+</div>
+
+<!-- TALKS -->
+<div class="section" id="talks">
+  <h2>Talks &amp; Presentations</h2>
+  <div class="talk"><div class="talk-date">11/2026</div><div class="talk-body">DMDU Society 2026 Annual Meeting, Baton Rouge, LA <span class="talk-type">oral</span></div></div>
+  <div class="talk"><div class="talk-date">09/2026</div><div class="talk-body">Inaugural Global Net-Zero X Workshop, Princeton, NJ <span class="talk-type">poster</span></div></div>
+  <div class="talk"><div class="talk-date">12/2025</div><div class="talk-body">AGU 2025 Annual Meeting, New Orleans, LA <span class="talk-type">oral</span></div></div>
+  <div class="talk"><div class="talk-date">10/2025</div><div class="talk-body">GCAM-USA/GLIMPSE State Applications Community of Practice <span class="talk-type">invited talk · virtual</span></div></div>
+  <div class="talk"><div class="talk-date">09/2025</div><div class="talk-body">Andlinger Center Annual Meeting, Princeton, NJ <span class="talk-type">poster</span></div></div>
+  <div class="talk"><div class="talk-date">06/2025</div><div class="talk-body">12th Annual E-ffiliates Partnership Retreat, Princeton, NJ <span class="talk-type">poster</span></div></div>
+  <div class="talk"><div class="talk-date">12/2024</div><div class="talk-body">AGU 2024 Annual Meeting, Washington, DC <span class="talk-type">elightning poster + oral</span></div></div>
+  <div class="talk"><div class="talk-date">11/2024</div><div class="talk-body">DMDU Society 2024 Annual Meeting, Denver, CO <span class="talk-type">oral</span></div></div>
+  <div class="talk"><div class="talk-date">11/2024</div><div class="talk-body">17th IAMC Annual Meeting, virtual <span class="talk-type">poster</span></div></div>
+  <div class="talk"><div class="talk-date">06/2024</div><div class="talk-body">GCAM Annual Meeting, virtual <span class="talk-type">invited poster</span></div></div>
+  <div class="talk"><div class="talk-date">10/2023</div><div class="talk-body">Workshop on Scaling Up EVs in China and India, Johns Hopkins University <span class="talk-type">invited talk</span></div></div>
+  <div class="talk"><div class="talk-date">10/2023</div><div class="talk-body">Inaugural Multi-Sector Dynamics (MSD) Workshop, Davis, CA <span class="talk-type">poster</span></div></div>
+</div>
+
+<!-- TEACHING -->
+<div class="section" id="teaching">
+  <h2>Teaching</h2>
+  <div class="sub-label">Guest Lectures</div>
+  <div class="timeline-entry">
+    <div class="tl-year">Fall 2026</div>
+    <div>
+      <div class="tl-title">Integrated Assessment Modeling and Science-Policy Integration for Global Environmental Change (CE5740)</div>
+      <div class="tl-sub">Iowa State University</div>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="tl-year">Fall 2023</div>
+    <div>
+      <div class="tl-title">Environmental Engineering Seminar (CE591)</div>
+      <div class="tl-sub">The Pennsylvania State University</div>
+    </div>
+  </div>
+  <div class="sub-label">Teaching Assistant</div>
+  <div class="timeline-entry">
+    <div class="tl-year">Spring 2021</div>
+    <div>
+      <div class="tl-title">Environmental Planning</div>
+      <div class="tl-sub">Nanjing University</div>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="tl-year">Fall 2020</div>
+    <div>
+      <div class="tl-title">Environmental Policy Analysis</div>
+      <div class="tl-sub">Nanjing University</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE -->
+<div class="section" id="service">
+  <h2>Service</h2>
+  <div class="sub-label">Reviewer</div>
+  <ul class="plain">
+    <li>Environmental Health Perspectives</li>
+    <li>Communications Earth &amp; Environment</li>
+    <li>Environmental Research Letters</li>
+    <li>iScience</li>
+    <li>Communications Sustainability</li>
+    <li>Scientific Reports</li>
+    <li>Environmental Research: Health</li>
+    <li>Environmental Research Communications</li>
+  </ul>
+  <div class="sub-label">Mentoring</div>
+  <ul class="plain">
+    <li>Yehyun Hong, Princeton ORFE (undergraduate student, class of 2028)</li>
+  </ul>
+</div>
+
+
+
+<footer>
+  Last updated January 2026 &nbsp;·&nbsp;
+  141 Andlinger Center, Princeton University &nbsp;·&nbsp;
+  <a href="mailto:ws6354@princeton.edu">ws6354@princeton.edu</a>
+</footer>
+
+</body>
+</html>
